@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  frontend:
+    build: .
+    command: /bin/bash -c 'yarn install && yarn run dev'
+    env_file: .env
+    volumes:
+      - .:/usr/src/app:rw
+      - /usr/src/app
+      - /usr/src/app/bower_components
+      - /usr/src/app/node_modules
+      - /usr/src/app/ssl
+      - /usr/src/app/tmp
+      - /usr/src/app/vendor/bundle
+      - ./vendor:/usr/src/app/vendor
+    ports:
+      - "3000:3000"
+    environment:
+      LANG: en_US.UTF-8
+      LANGUAGE: en_US:en
+      LC_ALL: en_US.UTF-8
+      TZ: Asia/Tokyo
