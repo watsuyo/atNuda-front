@@ -8,17 +8,16 @@
 
 <script>
 export default {
-
   name: 'PortfolioSearchBox',
-  data () {
-    return {
-    }
+  components: {
   },
   props: {
   },
-  methods: {
+  data() {
+    return {
+    }
   },
-  components: {
+  methods: {
   }
 }
 </script>
