@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header/>
     <main>
       <section class="section">
         <portfolio-search-box />
@@ -52,6 +53,7 @@
         </div>
       </section>
     </main>
+    <Footer/>
   </div>
 </template>
 
@@ -59,11 +61,15 @@
 import PortfolioCard from '../components/molecules/PortfolioCard'
 import PortfolioSearchBox from '../components/organisms/PortfolioSearchBox'
 import AssetsImage from '@/assets/England_Houses_Rivers_Bridges_Marinas_Evening_546553_1280x777.jpg'
+import Footer from '../components/molecules/Footer'
+import Header from '../components/molecules/Header'
 
 export default {
   components: {
     'portfolio-card': PortfolioCard,
-    'portfolio-search-box': PortfolioSearchBox
+    'portfolio-search-box': PortfolioSearchBox,
+    'Header': Header,
+    'Footer': Footer
   },
   data() {
     return {
