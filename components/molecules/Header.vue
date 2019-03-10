@@ -1,48 +1,33 @@
 <template>
-  <body>
-    <!-- 仕方なくcdn -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-    <Header>
-      <ul id="app">
-        <div class="nav-top">
-          <!-- タイトルは画像にする -->
-          <li class="logo">atNuda</li>
-          <li class="subtitle">エンジニア向けポートフォリオ投稿・添削サービス</li>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+  <nav class="flex items-center justify-between flex-wrap text-black p-6">
+    <div class="flex items-center flex-no-shrink text-black mr-6">
+      <span class="font-semibold tracking-tight text-5xl">atNuda</span>
+    </div>
+    <div class="block lg:hidden">
+      <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-black hover:border-white">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+      </button>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-lg lg:flex-grow">
+        <p class="block mt-4 lg:inline-block lg:mt-0 text-black mr-4">
+          エンジニア向けポートフォリオ投稿・添削サービス
+        </p>
+      </div>
+      <div>
+        <div v-if="isLogin">
+          <i class="fas fa-address-book"></i>
+          <a href="#" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fas fa-address-book">新規投稿</a>
+          <i class="fas fa-user-circle text-5xl"></i>
         </div>
-        <div v-if="isLogin" class="icons">
-          <li>
-            <strong class="newPost">新規投稿</strong>
-            <i class="fas fa-user-circle"></i>
-          </li>
-        </div>
-        <ul v-else class="icons">
-          <li>
-            <i class="fas fa-address-card"></i>
-            <strong class="newPost">投稿</strong>
-          </li>
-          <li>
-            <i class="fas fa-sign-in-alt"></i>
-            <strong class="newPost">登録・ログイン</strong>
-          </li>
-          <li>
-            <i class="fas fa-user-circle"></i>
-          </li>
-        </ul>
-      </ul>
-    </Header>   
-  </body>
+        <a href="#" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fas fa-address-book">投稿</a>
+        <a href="#" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0">登録・ログイン</a>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script>
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-// library.add()
-
 export default {
     
   }
@@ -50,28 +35,5 @@ export default {
 
 
 <style lang="scss">
-  body {
-    width: 100%;
-    text-align: center;
-  }
-  Header {
-    display: flex;
-  }
-  .nav-top {
-    display: flex;
-  }
-  ul {
-    list-style: none;
-    display: flex;
-  }
-  .logo {
-    text-align: left;
-    font-size: 300%;
-  }
-  .subtitle {
-    font-size: 150%;
-  }
-  .icons {
-    display: flex;
-  }
+
 </style>

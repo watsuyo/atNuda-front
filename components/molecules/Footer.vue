@@ -1,42 +1,33 @@
 <template>
-  <body>
-    <!-- 仕方なくcdn -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-      
-    <footer>
-      <ul id="app">
-        <div class="nav-top">
-            <!-- タイトルは画像にする -->
-          <li class="logo">atNuda</li>
-          <li class="subtitle">エンジニア向けポートフォリオ投稿・添削サービス</li>
+  <div class="text-black text-2xl p-8">
+    <nav class="flex items-center justify-between flex-wrap p-6">
+      <div class="flex items-center flex-no-shrink text-black mr-6">
+        <span class="font-semibold text-xl tracking-tight text-5xl">atNuda</span>
+      </div>
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-lg lg:flex-grow">
+          <p class="block mt-4 lg:inline-block lg:mt-0 text-black mr-4">
+            エンジニア向けポートフォリオ投稿・添削サービス
+          </p>
         </div>
-        <div class="nav-bottom">
-          <ul class="twitter">
-            <li>ご意見・ご質問はDMで</li>
-            <li>
-              <i class="fab fa-twitter"></i>
-              <strong class="newPost">atNuda公式アカウント</strong>
-            </li>
-          </ul>
-          <ul class="twitter">
-            <li class="is-size-6 announce">このサイトをシェア</li>
-            <li>
-              <i class="fab fa-twitter"></i>
-              <strong class="newPost">ツイート</strong>
-            </li>
-          </ul>
+        <div>
+          <div>
+            <strong class="text-sm">ご意見・ご質問はDMで</strong>
+            <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded">
+              <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fab fa-twitter">atNuda公式アカウント</a>
+            </button>
+          </div>
+          <div>
+            <strong class="text-sm">このサイトをシェア</strong>
+            <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fab fa-twitter">ツイート</a>
+          </div>
         </div>
-      </ul>
-    </footer>
-  </body>
+      </div>
+    </nav>
+  </div>
 </template>
 
 <script>
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-// library.add()
-
 export default {
     
   }
@@ -44,14 +35,5 @@ export default {
 
 
 <style lang="scss">
-Footer {
-  display: flex;
-  margin-top: auto;
-}
-ul .twitter {
-  display: flex;
-}
-.nav-bottom {
 
-}
 </style>
