@@ -11,15 +11,17 @@
           </p>
         </div>
         <div>
-          <div>
-            <strong class="text-sm">ご意見・ご質問はDMで</strong>
-            <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded">
-              <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fab fa-twitter">atNuda公式アカウント</a>
+          <div class="pb-2">
+            <strong class="text-sm">このサイトをシェア</strong>
+            <button class="bg-black">
+              <a href="#" class="inline-block text-sm px-4 py-2 text-white leading-none rounded mt-4 lg:mt-0 fab fa-twitter">ツイート</a>
             </button>
           </div>
           <div>
-            <strong class="text-sm">このサイトをシェア</strong>
-            <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fab fa-twitter">ツイート</a>
+            <strong class="text-sm">ご意見・ご質問はDMで</strong>
+            <button class="bg-black">
+              <a href="#" class="inline-block text-sm px-4 py-2 text-white leading-none rounded mt-4 lg:mt-0 fab fa-twitter">atNuda公式アカウント</a>
+            </button>
           </div>
         </div>
       </div>
