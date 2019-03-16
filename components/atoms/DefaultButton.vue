@@ -7,30 +7,12 @@
 <script>
 export default {
   name: 'PortfolioSearchBox',
-  components: {
-  },
   props: {
     text: String
-  },
-  data() {
-    return {
-    }
-  },
-  methods: {
   }
 }
 </script>
 
 <style scoped>
-/* label{
-  padding:5px;
-  border: 1px solid plum;
-  border-radius: 5px;
-}
-input{
-  display: none;
-}
-.check_box:checked + .label {
-  background-color: orange;
-} */
+
 </style>
