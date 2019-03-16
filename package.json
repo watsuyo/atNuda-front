@@ -21,7 +21,8 @@
     "node-sass": "^4.11.0",
     "nuxt": "^2.4.0",
     "sass-loader": "^7.1.0",
-    "vue-carousel": "^0.17.0"
+    "vue-carousel": "^0.17.0",
+    "vuejs-paginate": "^2.1.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.7.1",
