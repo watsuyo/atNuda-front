@@ -1,5 +1,6 @@
 <template>
   <div>
+    <header_/>
     <main class="container mx-auto">
       <portfolio-search-box class="mx-auto mb-10" />
       <portfolio-order-box class="mx-auto px-6" />
@@ -32,13 +33,16 @@
        <pagination />
       </section>
     </main>
+    <footer_/>
   </div>
 </template>
 
 <script>
-import PortfolioCard from '../components/molecules/PortfolioCard'
-import PortfolioSearchBox from '../components/organisms/PortfolioSearchBox'
+import Footer from '../components/molecules/Footer'
+import Header from '../components/molecules/Header'
 import PortfolioOrderBox from '../components/organisms/PortfolioOrderBox'
+import PortfolioSearchBox from '../components/organisms/PortfolioSearchBox'
+import PortfolioCard from '../components/molecules/PortfolioCard'
 import Pagination from '../components/molecules/Pagination'
 import AssetsImage from '@/assets/England_Houses_Rivers_Bridges_Marinas_Evening_546553_1280x777.jpg'
 
@@ -46,8 +50,10 @@ export default {
   components: {
     'portfolio-card': PortfolioCard,
     'portfolio-search-box': PortfolioSearchBox,
+    'header_': Header,
+    'footer_': Footer,
     'portfolio-order-box': PortfolioOrderBox,
-    'pagination': Pagination
+    'pagination': Pagination,
   },
   data() {
     return {

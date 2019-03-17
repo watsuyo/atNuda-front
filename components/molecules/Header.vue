@@ -1,93 +1,44 @@
 <template>
-  <body>
-    <div id="app">
-      <!-- 仕方なくcdn -->
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-      
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="">
-              <!-- タイトルは画像にする -->
-            <!-- <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"> -->
-            <p class="is-size-1">atNuda</p>
-            <p class="is-size-6 subtitle">エンジニア向けポートフォリオ投稿・添削サービス</p>
-          </a>
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div v-if="isLogin" class="icons">
-                <a class="button is-medium is-size-5">
-                  <i class="fas fa-address-card"></i>
-                  <strong class="newPost">新規投稿</strong>
-                </a>
-                <i class="fas fa-user-circle is-size-1"></i>
-              </div>
-              <div v-else class="icons">
-                <a class="button is-medium is-size-5">
-                  <i class="fas fa-address-card"></i>
-                  <strong class="newPost">投稿</strong>
-                </a>
-                <a class="button is-medium is-size-5">
-                  <i class="fas fa-sign-in-alt"></i>
-                  <strong class="newPost">登録・ログイン</strong>
-                </a>
-                <i class="fas fa-user-circle is-size-1"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+  <nav class="flex items-center justify-between flex-wrap text-black p-6">
+    <div class="flex items-center flex-no-shrink text-black mr-6">
+      <span class="font-semibold tracking-tight text-5xl">atNuda</span>
     </div>
-  </body>
+    <div class="block lg:hidden">
+      <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-black hover:border-white">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+      </button>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-lg lg:flex-grow">
+        <p class="block mt-4 lg:inline-block lg:mt-0 text-black mr-4">
+          エンジニア向けポートフォリオ投稿・添削サービス
+        </p>
+      </div>
+      <div>
+        <div v-if="isLogin">
+          <a href="#" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fas fa-address-book">新規投稿</a>
+          <i class="fas fa-user-circle text-5xl"></i>
+        </div>
+        <div v-else>
+          <a href="#" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fas fa-address-book">投稿</a>
+          <a href="#" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0">登録・ログイン</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script>
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-// library.add()
-
-export default {
-    
+  export default {
+    data: () => {
+      return {
+        isLogin: false
+      }
+    }    
   }
 </script>
 
 
 <style lang="scss">
-  @import "../../node_modules/bulma/bulma.sass";
-  body {
-    width: 100%;
-    text-align: center;
-  }
-  #app {
-    width: 80%;
-    display: inline-block;
-  }
-  #header {
-    display: inline-block; 
-  }
-  .subtitle {
-    padding-left: 30px;
-  }
-  .navbar-menu {
-    padding-left: 15%;
-  }
-  .icons {
-    display: inline-block;
-  }
-  .fa-address-card {
-    padding-right: 5%;
-  }
-  .fa-user-circle {
-    padding-left: 5%;
-  }
-  .newPost {
-    padding-left: 5%;
-  }
+
 </style>
