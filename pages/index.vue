@@ -1,21 +1,12 @@
 <template>
   <div>
     <header_/>
-    <main>
-      <section class="section">
-        <portfolio-search-box />
-      </section>
-      <section class="section">
-        <div class="column">
-          <div class="buttons is-centered">
-            <a class="button">新着順</a>
-            <a class="button">人気順</a>
-          </div>
-        </div>
-      </section>
-      <section class="section">
-        <div class="columns has-background-white">
-          <div class="column is-4 is-offset-1">
+    <main class="container mx-auto">
+      <portfolio-search-box class="mx-auto mb-10" />
+      <portfolio-order-box class="mx-auto px-6" />
+      <section>
+          <div class="flex flex-wrap justify-start mx-auto">
+            <div class="w-2/5 my-10 mx-auto">
             <portfolio-card :portfolio="portfolio" />
             </div>
             <div class="w-2/5 my-10 mx-auto">
@@ -50,6 +41,8 @@
 import Footer from '../components/molecules/Footer'
 import Header from '../components/molecules/Header'
 import PortfolioOrderBox from '../components/organisms/PortfolioOrderBox'
+import PortfolioSearchBox from '../components/organisms/PortfolioSearchBox'
+import PortfolioCard from '../components/molecules/PortfolioCard'
 import Pagination from '../components/molecules/Pagination'
 import AssetsImage from '@/assets/England_Houses_Rivers_Bridges_Marinas_Evening_546553_1280x777.jpg'
 
