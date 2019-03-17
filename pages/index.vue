@@ -53,7 +53,7 @@ export default {
     'header_': Header,
     'footer_': Footer,
     'portfolio-order-box': PortfolioOrderBox,
-    'pagination': Pagination
+    'pagination': Pagination,
   },
   data() {
     return {
