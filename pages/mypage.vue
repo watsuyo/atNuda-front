@@ -12,7 +12,7 @@ import header from '../components/molecules/Header'
 export default {
   components: {
     'header_': Header,
-    'footer_': Footer
+    'footer_': Footer,
   }
 }
 </script>
