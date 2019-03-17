@@ -1,5 +1,6 @@
 <template>
-  <div class="modal" :class="{'is-active':modalActives}">
+  <!-- 要修正 -->
+  <!-- <div class="modal" :class="{'is-active':modalActives}">
     <div class="modal-background">
       <div class="modal-content">
         <div class="box">
@@ -63,7 +64,6 @@
                 </div>
               </nav>
               <div id="message-contents">
-                <!-- ▼メッセージ一個ぶんの表示 -->
                 <div v-for="{index, comment} in portfolio.comments" :key="index" class="message-wrapper is-clearfix">
                   <div class="box">
                     <div class="content">
@@ -90,7 +90,7 @@
       </div>
       <button class="modal-close" @click="$emit('set')" />
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
