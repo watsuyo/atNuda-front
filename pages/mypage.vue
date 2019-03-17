@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <Header/>
-    <Footer/>
+    <header/>
+    <footer/>
   </div>
 </template>
 
 <script>
-import Footer from '../components/molecules/Footer'
-import Header from '../components/molecules/Header'
+import footer from '../components/molecules/Footer'
+import header from '../components/molecules/Header'
 
 export default {
   components: {
-    Footer,
-    Header
+    'header': Header,
+    'footer': Footer
   }
 }
 </script>
