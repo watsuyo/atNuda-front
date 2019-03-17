@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <header/>
-    <footer/>
+    <header_/>
+    <footer_/>
   </div>
 </template>
 
@@ -11,8 +11,8 @@ import header from '../components/molecules/Header'
 
 export default {
   components: {
-    'header': Header,
-    'footer': Footer
+    'header_': Header,
+    'footer_': Footer
   }
 }
 </script>
