@@ -47,6 +47,7 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
+    'nuxt-user-agent',
     '@nuxtjs/axios',
     // ['nuxt-sass-resources-loader', './assets/main.scss']
   ],
