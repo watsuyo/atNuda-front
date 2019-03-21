@@ -17,7 +17,7 @@
       <div>
         <div v-if="isLogin">
           <a href="#" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fas fa-address-book">新規投稿</a>
-          <i class="fas fa-user-circle text-5xl"></i>
+          <img :src="user_icon" class="rounded-full h-8 w-8">
         </div>
         <div v-else>
           <a href="#" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fas fa-address-book">投稿</a>
@@ -29,10 +29,12 @@
 </template>
 
 <script>
+  import user_icon from '~/assets/user_icon.png'
   export default {
     data: () => {
       return {
-        isLogin: false
+        isLogin: true,
+        user_icon
       }
     }    
   }
