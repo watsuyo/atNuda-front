@@ -15,7 +15,7 @@
         </p>
       </div>
       <div>
-        <div v-if="`${$store.state.isLogin}`">
+        <div v-if="$store.state.isLogin">
           <a href="/portfolio/new" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fas fa-address-book">新規投稿</a>
           <a href="/mypage">
             <img :src="user_icon" class="rounded-full h-8 w-8">
@@ -23,7 +23,7 @@
         </div>
         <div v-else>
           <a href="#" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fas fa-address-book">投稿</a>
-          <a href="#" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0">登録・ログイン</a>
+          <a @click="login" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0">登録・ログイン</a>
         </div>
       </div>
     </div>
@@ -38,10 +38,14 @@
   export default {
     data: () => {
       return {
-        // isLogin: true,
         user_icon
       }
-    }    
+    },
+    methods: {
+      async login () {
+        await axios.post('http://35.189.159.191:3000/auth/twitter');
+      }
+    }   
   }
 </script>
 

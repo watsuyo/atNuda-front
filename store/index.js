@@ -8,25 +8,11 @@ const createStore = () => {
                 isLogin: false,
                 tabValue: 1
             };
+        },
+        actions: () => {
+
         }
     })
 }
 
 export default createStore;
-
-// export const state = () => ({
-//     islogin: false,
-// });
-
-// export const getters = {
-//     islogin (state) {
-//         return state.islogin;
-//     }
-// };
-
-// export const mutations = {
-// };
-
-// export const actions = {
-    
-// };

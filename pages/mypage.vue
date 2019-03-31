@@ -20,24 +20,24 @@
           </div>
         </main>
       </div>
-      <div v-else>
-        <p>いいねした投稿</p>
-          <main class="container mx-auto">
-            <personal-info class="mx-auto mb-10" />
-            <mypage-order-box class="mx-auto px-6" />
-            <section>
-              <div class="flex flex-wrap justify-start mx-auto">
-                <div class="w-2/5 my-10 mx-auto">
-                <portfolio-card :portfolio="portfolio" />
-                </div>
-                <div class="w-2/5 my-10 mx-auto">
-                <portfolio-card :portfolio="portfolio" />
-                </div>
+      <div v-if="$store.state.tabValue === 2">
+        <main class="container mx-auto">
+          <p>いいねした投稿</p>
+          <personal-info class="mx-auto mb-10" />
+          <mypage-order-box class="mx-auto px-6" />
+          <section>
+            <div class="flex flex-wrap justify-start mx-auto">
+              <div class="w-2/5 my-10 mx-auto">
+              <portfolio-card :portfolio="portfolio" />
               </div>
-            </section>
-            <div class="mx-auto px-6">
-              <back-to-top class="mx-auto px-6" />
+              <div class="w-2/5 my-10 mx-auto">
+              <portfolio-card :portfolio="portfolio" />
+              </div>
             </div>
+          </section>
+          <div class="mx-auto px-6">
+            <back-to-top class="mx-auto px-6" />
+          </div>
         </main>
       </div>
     <footer_ />

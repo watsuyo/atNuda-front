@@ -1,12 +1,20 @@
 <template>
   <div class="w-1/3 flex justify-around border border-grey-light rounded-full border-solid py-2 px-4 ">
     <div @click="tabValueMyPost">
-      <default-buttom text="自分の投稿" />
-      <inactive-button text="自分の投稿" />
+      <div v-if="`${$store.state.tabValue}` === 1">
+        <default-buttom text="自分の投稿" />
+      </div>
+      <div v-else>
+        <inactive-button text="自分の投稿" />
+      </div>
     </div>
     <div @click="tabValueLike">
-      <default-buttom text="いいね済" />
-      <inactive-button text="いいね済" />
+      <div v-if="`${$store.state.tabValue}` === 2">
+        <default-buttom text="いいね済" />
+      </div>
+      <div v-else>
+        <inactive-button text="いいね済" />
+      </div>
     </div>
   </div>
 </template>
@@ -34,10 +42,10 @@ export default {
       this.tabValue = 2
     },
   },
-  watch() {
-    this.$emit('tabValueMyPost', this.tabValue);
-    this.$emit('tabValueLike', this.tabValue);
-  }
+  // watch() {
+  //   this.$emit('tabValueMyPost', this.tabValue);
+  //   this.$emit('tabValueLike', this.tabValue);
+  // }
 }
 </script>
 
