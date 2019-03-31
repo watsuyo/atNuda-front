@@ -35,10 +35,6 @@ export default {
   },
   methods: {
   },
-  // watch() {
-  //   this.$emit('tabValueMyPost', this.tabValue);
-  //   this.$emit('tabValueLike', this.tabValue);
-  // }
 }
 </script>
 
