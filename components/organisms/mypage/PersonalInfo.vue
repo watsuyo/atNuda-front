@@ -2,21 +2,21 @@
   <div>
     <div class="flex">
       <div class="flex-1 text-5xl text-right self-center text-centerpx-4">
-        <img :src="user_icon" class="rounded-full h-64 w-64">
+        <img :src="user_icon" class="rounded-full h-32 w-32">
       </div>
       <div class="flex-1 text-center px-4 py-2 m-2">
         <div class="flex flex-col">
-          <div class="text-left px-4 py-9 text-5xl">
-            {{ `${userName}` }}
+          <div class="text-left px-4 py-9 text-4xl">
+            {{ $store.state.userName }}
             <!-- <i class="fas fa-cog text-2xl"></i> -->
           </div>
           <div class="text-left px-4 py-2 text-2xl">
             <a class="fab fa-twitter-square fa-blue text-xl" href="https://twitter.com/7_3isawa" />
-            {{ '@' + `${userName}` }}
+            {{ '@' + $store.state.userName }}
           </div>
           <div class="text-left px-4 py-2 text-2xl">
             <a class="fab fa-github-square text-xl" href="https://github.com/3isawa" />
-            {{ `${userName}` }}
+            {{ $store.state.userName }}
           </div>
         </div>
         <div class="flex mt-6">
