@@ -1,7 +1,7 @@
 <template>
-  <nav class="flex items-center justify-between flex-wrap text-black p-6">
+    <nav class="flex items-center justify-between flex-wrap text-black p-6">
     <div class="flex items-center flex-no-shrink text-black mr-6">
-      <a class="font-semibold tracking-tight text-5xl" href="/">atNuda</a>
+      <span class="font-semibold tracking-tight text-5xl">atNuda</span>
     </div>
     <div class="block lg:hidden">
       <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-black hover:border-white">
@@ -15,11 +15,9 @@
         </p>
       </div>
       <div>
-        <div v-if="`${$store.state.isLogin}`">
-          <a href="/portfolio/new" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fas fa-address-book">新規投稿</a>
-          <a href="/mypage">
-            <img :src="user_icon" class="rounded-full h-8 w-8">
-          </a>
+        <div v-if="isLogin">
+          <a href="#" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fas fa-address-book">新規投稿</a>
+          <img :src="user_icon" class="rounded-full h-8 w-8">
         </div>
         <div v-else>
           <a href="#" class="inline-block text-lg px-4 py-2 leading-none border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 fas fa-address-book">投稿</a>
@@ -28,24 +26,41 @@
       </div>
     </div>
   </nav>
+
 </template>
 
 <script>
-  import user_icon from '~/assets/user_icon.png'
-  import Vue from 'vue'
-  import VueI18n from 'vue-i18n'
-  import axios from 'axios'
-  export default {
-    data: () => {
-      return {
-        // isLogin: true,
-        user_icon
-      }
-    }    
+export default {
+  components: {
+    
+  },
+  props() {
+    this.deviceType;
+  },
+  data() {
+    return {
+      isPC : this.deviceType === 'pc',
+    }
+  },
+  created() {
+    this.deviceType();
+  },
+  methods: {
+    deviceType () {
+      return this.$emit('deviceType', { deviceType: this.$ua.deviceType() });
+      // const deviceType = this.$ua.deviceType();
+      // if (deviceType === 'pc') {
+      //   console.log('PCです');
+      // } else {
+      //   console.log(deviceType);
+      // }
+      // return deviceType;
+    }
   }
+
+}
 </script>
 
-
-<style lang="scss">
+<style>
 
 </style>
