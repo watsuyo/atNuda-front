@@ -1,23 +1,45 @@
 <template>
   <div>
     <header_ />
-    <main class="container mx-auto">
-      <personal-info class="mx-auto mb-10" />
-      <mypage-order-box class="mx-auto px-6" />
-      <section>
-        <div class="flex flex-wrap justify-start mx-auto">
-          <div class="w-2/5 my-10 mx-auto">
-          <portfolio-card :portfolio="portfolio" />
+      <div v-if="$store.state.tabValue === 1">
+        <main class="container mx-auto">
+          <personal-info class="mx-auto mb-10" />
+          <mypage-order-box class="mx-auto px-6" />
+          <section>
+            <div class="flex flex-wrap justify-start mx-auto">
+              <div class="w-2/5 my-10 mx-auto">
+              <portfolio-card :portfolio="portfolio" />
+              </div>
+              <div class="w-2/5 my-10 mx-auto">
+              <portfolio-card :portfolio="portfolio" />
+              </div>
+            </div>
+          </section>
+          <div class="mx-auto px-6">
+            <back-to-top class="mx-auto px-6" />
           </div>
-          <div class="w-2/5 my-10 mx-auto">
-          <portfolio-card :portfolio="portfolio" />
-          </div>
-        </div>
-      </section>
-      <div class="mx-auto px-6">
-        <back-to-top class="mx-auto px-6" />
+        </main>
       </div>
-    </main>
+      <div v-else>
+        <p>いいねした投稿</p>
+          <main class="container mx-auto">
+            <personal-info class="mx-auto mb-10" />
+            <mypage-order-box class="mx-auto px-6" />
+            <section>
+              <div class="flex flex-wrap justify-start mx-auto">
+                <div class="w-2/5 my-10 mx-auto">
+                <portfolio-card :portfolio="portfolio" />
+                </div>
+                <div class="w-2/5 my-10 mx-auto">
+                <portfolio-card :portfolio="portfolio" />
+                </div>
+              </div>
+            </section>
+            <div class="mx-auto px-6">
+              <back-to-top class="mx-auto px-6" />
+            </div>
+        </main>
+      </div>
     <footer_ />
   </div>
 </template>
@@ -31,6 +53,9 @@ import PortfolioCard from '../components/molecules/PortfolioCard'
 import Pagination from '../components/molecules/Pagination'
 import BackToTop from '../components/atoms/BackToTop'
 import AssetsImage from '@/assets/England_Houses_Rivers_Bridges_Marinas_Evening_546553_1280x777.jpg'
+import Vue from 'vue'
+import VueI18n from 'vue-i18n'
+import axios from 'axios'
 
 export default {
   components: {

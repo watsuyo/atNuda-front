@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="isPC">
+    <div v-if="!isPC">
     <header_/>
       <main class="container mx-auto">
         <portfolio-search-box class="mx-auto mb-10" />
@@ -51,6 +51,9 @@ import PortfolioCard from '../components/molecules/PortfolioCard'
 import Pagination from '../components/molecules/Pagination'
 import AssetsImage from '@/assets/England_Houses_Rivers_Bridges_Marinas_Evening_546553_1280x777.jpg'
 import SmartphoneTop from '../components/organisms/SmartphoneTop'
+import Vue from 'vue'
+import VueI18n from 'vue-i18n'
+import axios from 'axios'
 
 export default {
   components: {

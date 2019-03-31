@@ -8,14 +8,14 @@
         <div class="flex flex-col">
           <div class="text-left px-4 py-9 text-5xl">
             {{ `${userName}` }}
-            <i class="fas fa-cog text-2xl"></i>
+            <!-- <i class="fas fa-cog text-2xl"></i> -->
           </div>
           <div class="text-left px-4 py-2 text-2xl">
-            <i class="fab fa-twitter-square fa-blue text-xl" />
+            <a class="fab fa-twitter-square fa-blue text-xl" href="https://twitter.com/7_3isawa" />
             {{ '@' + `${userName}` }}
           </div>
           <div class="text-left px-4 py-2 text-2xl">
-            <i class="fab fa-github-square text-xl" />
+            <a class="fab fa-github-square text-xl" href="https://github.com/3isawa" />
             {{ `${userName}` }}
           </div>
         </div>
@@ -41,6 +41,9 @@
 import MultiSelectButton from '@/components/atoms/MultiSelectButton'
 import DefaultButton from '@/components/atoms/DefaultButton'
 import user_icon from '~/assets/user_icon.png'
+import Vue from 'vue'
+import VueI18n from 'vue-i18n'
+import axios from 'axios'
 
 export default {
   name: 'PortfolioSearchBox',
