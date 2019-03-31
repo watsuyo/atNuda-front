@@ -47,7 +47,7 @@
 <script>
 import Footer from '../components/molecules/Footer'
 import Header from '../components/molecules/Header'
-import OrderBox from '../components/organisms/mypage/OrderBox'
+import MypageOrderBox from '../components/organisms/mypage/MypageOrderBox'
 import PersonalInfo from '../components/organisms/mypage/PersonalInfo'
 import PortfolioCard from '../components/molecules/PortfolioCard'
 import Pagination from '../components/molecules/Pagination'
@@ -63,7 +63,7 @@ export default {
     'personal-info': PersonalInfo,
     'header_': Header,
     'footer_': Footer,
-    'mypage-order-box': OrderBox,
+    'mypage-order-box': MypageOrderBox,
     'pagination': Pagination,
     'back-to-top': BackToTop,
   },
