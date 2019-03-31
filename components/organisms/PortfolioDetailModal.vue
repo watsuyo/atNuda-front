@@ -1,37 +1,26 @@
 <template>
-  <!-- 要修正 -->
-  <!-- <div class="modal" :class="{'is-active':modalActives}">
-    <div class="modal-background">
-      <div class="modal-content">
-        <div class="box">
-          <div class="content has-text-centered">
-            <div class="card is-shady">
-              <nav class="navbar">
-                <div class="navbar-start">
-                  <div class="media u-my-auto u-ml-5">
-                    <figure class="image is-48x48">
-                      <img class="is-rounded" :src="portfolio.user.user_small_images_url" width="48" height="48">
+    <transition name="modal">
+      <div class="modal-mask">
+        <div class="modal-wrapper" @click.self="closeSelf">
+          <div class="modal-container">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg bg-grey-lighter">
+                <div class="flex justify-between">
+                  <div class="flex items-center mt-2 mx-2">
+                    <figure class="rounded-full">
+                      <img class="rounded-full" :src="portfolio.user.user_small_images_url" width="48" height="48">
                     </figure>
-                  </div>
-                  <div class="navbar-item">
-                    <span class="u-valign-m is-size-5">{{ portfolio.user.name }}</span>
-                  </div>
-                </div>
-                <div class="navbar-end">
-                  <div class="navbar-item">
-                    <div class="has-background-primary tag">
-                      <i class="fas fa-flag fa-lg has-text-white" />
-                      <span class="has-text-white">{{ portfolio.user.status }}</span>
+                    <div class="text-center font-bold text-xl ml-2">
+                      {{ portfolio.user.name }}
                     </div>
                   </div>
+                  <default-button :text="portfolio.user.status" class="my-2 mx-2" /> 
                 </div>
-              </nav>
-              <div class="card-content">
-                <div class="content">
-                  {{ portfolio.portfolio_comment }}
-                </div>
+              <div class="px-3 py-4">
+                <p class="text-base">
+                {{ portfolio.portfolio_comment }}
+                </p>
               </div>
-              <div class="card-image">
+              <div>
                 <carousel :per-page="1" :adjustable-height="true" :autoplay="true" :loop="true" :autoplay-timeout="5000">
                   <slide v-for="(image_url, index) in portfolio.image_urls" :key="index">
                     <a :href="portfolio.site_url">
@@ -40,73 +29,54 @@
                   </slide>
                 </carousel>
               </div>
-              <nav class="navbar">
-                <div class="navbar-start">
-                  <div class="navbar-item">
-                    <a class="button is-primary"><i class="fas fa-comment has-text-white" />コメント</a>
-                  </div>
-                  <div class="navbar-item">
-                    <a class="button is-primary"><i class="fas fa-volume-up has-text-white" />アドバイス</a>
-                  </div>
+              <div class="flex justify-between items-center">
+                <div class="flex justify-start w-4/5">
+                  <default-button text="コメント" class="ml-2" />
+                  <default-button text="アドバイス" class="ml-2" />
                 </div>
-                <div class="navbar-end">
+                <div class="flex justify-around mr-5 items-center w-1/5">
                   <div class="navbar-item">
-                    <a>
-                      <i class="fa fa-heart has-text-primary" />
+                    <a class="block mr-4">
+                      <i class="fa fa-heart fa-lg text-main-color"/>
                       <span>{{ portfolio.like }}</span>
                     </a>
                   </div>
-                  <div class="navbar-item">
-                    <a>
-                      <i class="fab fa-twitter has-text-primary" />
-                    </a>
+                  <a class="fab fa-twitter-square fa-lg text-main-color"></a>
+                </div>
+              </div>
+              <div class="mt-3">
+                <div v-if="isAdvice">
+                  <div v-for="(correction, index) in portfolio.corrections" :key="index">
+                    <comment-block :img="portfolio.user.user_small_images_url" :text="correction.correction"/>
                   </div>
                 </div>
-              </nav>
-              <div id="message-contents">
-                <div v-for="{index, comment} in portfolio.comments" :key="index" class="message-wrapper is-clearfix">
-                  <div class="box">
-                    <div class="content">
-                      <p>
-                        {{ comment.comment }}
-                      </p>
-                    </div>
+                <div v-else>
+                  <div v-for="(comment, index) in portfolio.comments" :key="index">
+                    <comment-block :img="portfolio.user.user_small_images_url" :text="comment.comment"/>
                   </div>
                 </div>
               </div>
-              <footer>
-                <div class="field is-grouped">
-                  <div class="control is-expanded">
-                    <input v-model="message" class="input is-medium" type="text" placeholder="Message">
-                  </div>
-                  <div class="control control-submit">
-                    <button :disabled!="null" class="button is-primary button-submit" value="送信" />
-                  </div>
-                </div>
-              </footer>
             </div>
           </div>
         </div>
       </div>
-      <button class="modal-close" @click="$emit('set')" />
-    </div>
-  </div> -->
+    </transition>
 </template>
 
 <script>
 import { Carousel, Slide } from 'vue-carousel'
+import DefaultButton from '~/components/atoms/DefaultButton'
+import CommentBlock from '~/components/molecules/CommentBlock'
+import HogeImage from '~/assets/England_Houses_Rivers_Bridges_Marinas_Evening_546553_1280x777.jpg'
 
 export default {
   components: {
     Carousel,
-    Slide
+    Slide,
+    'default-button': DefaultButton,
+     CommentBlock
   },
   props: {
-    isActive: {
-      type: Boolean,
-      defalt: false,
-      required: true
-    },
     portfolio: {
       type: Object,
       required: true,
@@ -115,73 +85,48 @@ export default {
   },
   data() {
     return {
-      message: ''
+    showModal: false,
+    isAdvice: true
+    }
+  },
+  methods: {
+    closeSelf() {
+      this.$emit("closeSelf")
     }
   },
   computed: {
-    modalActives: function () {
-      return this.isActive
-    }
   }
 }
 </script>
 
-<style>
-header{
-    position:fixed;
-    width:100%;
-    background:#00d1b2;
-    z-index:2;
-    height:55px;
+<style scoped lang="scss">
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7);
+  display: table;
+  transition: opacity .3s ease;
 }
 
-#app header h1{
-    padding-left:10px;
-    padding-top:8px;
-    color:#ffffff;
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
 }
 
-.chaturl{
-    padding-left:10px;
+.modal-container {
+  width: 700px;
+  height: 1000px;
+  margin: 0px auto;
+  padding: 20px 100px;
+  border-radius: 2px;
+  transition: all .5s ease;
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
-.chaturl a{
-    color:#ffffff;
-    font-size:14px;
-}
-
-.chaturl a:hover{
-    text-decoration: underline;
-}
-
-.button-submit{
-    height:45px;
-    line-height:1.0;
-    width:100%;
-}
-
-.control-submit{
-    width:20%;
-}
-
-#message-contents{
-    z-index:1;
-    padding: 55px 10px 76px 10px;
-    background:#ffffff;
-}
-
-.message-wrapper{
-    margin:20px 10px;
-}
-
-.message-wrapper .box{
-    float:left;
-}
-.message-wrapper .box.mymessage{
-    float:right;
-}
-
-.mymessage p{
-    text-align: right;
-}
 </style>
