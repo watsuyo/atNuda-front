@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
         <div class="flex justify-between">
           <div class="flex items-center mt-2 mx-2">
             <figure class="rounded-full">
@@ -39,7 +39,7 @@
         </div>
       </div>
     </div>
-    <portfolio-detail-modal :is-active="modalActive" :portfolio="portfolio" @set="closeModal" />
+    <portfolio-detail-modal :portfolio="portfolio"  v-if="isModal" @closeSelf="closeModal"/>
   </div>
 </template>
 
@@ -68,15 +68,15 @@ export default {
   data() {
     return {
       img: HogeImage,
-      modalActive: false
+      isModal: false
     }
   },
   methods: {
     showModal: function () {
-      this.modalActive = true
+      this.isModal = true
     },
     closeModal: function () {
-      this.modalActive = false
+      this.isModal = false
     }
   }
 }
