@@ -3,7 +3,7 @@
     <div class="flex mt-6">
       <div class="w-1/4 text-center ">ポジション</div>
       <div class="w-3/4 flex">
-
+        
         <div @click="$store.dispatch('changeIsFront')">
           <multi-select-buttom text="フロント" class="mr-3"/>
         </div>
@@ -19,8 +19,9 @@
         </div>
         <p>{{$store.state.position.back}}</p>
 
-        <div @click="$store.dispatch('changeIsInfra')"></div>
+        <div @click="$store.dispatch('changeIsInfra')">
           <multi-select-buttom text="インフラ" class="mr-3" />
+        </div>
         <p>{{$store.state.position.infra}}</p>
 
         <div @click="$store.dispatch('changeIsFullStack')">
@@ -33,6 +34,7 @@
     <div class="flex my-6">
       <div class="w-1/4 text-center ">ステータス</div>
       <div class="w-3/4 flex">
+
         <div @click="$store.dispatch('changeIsLookingForAJob')">
           <multi-select-buttom text="求職中" class="mr-3" />
         </div>
