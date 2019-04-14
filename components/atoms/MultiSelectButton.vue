@@ -1,7 +1,7 @@
 <template>
     <div>
       <input type="checkbox" class="hidden" id="btn" />
-      <!-- <div v-if="$store.state.position.front"> -->
+      <!-- <div v-if="$store.state.common.position.front"> -->
       <label class="block bg-transparent text-grey hover:text-main-color border border-grey-dark hover:border-main-color py-1 px-3 rounded-full" for="btn">{{text}}</label>
       <!-- </div> -->
     </div>

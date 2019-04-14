@@ -1,7 +1,7 @@
 <template>
   <div>
     <header_ />
-      <div v-if="$store.state.tabValue === 1">
+      <div v-if="$store.state.common.tabValue === 1">
         <main class="container mx-auto">
           <personal-info class="mx-auto mb-10" />
           <mypage-order-box class="mx-auto px-6" />
@@ -20,7 +20,7 @@
           </div>
         </main>
       </div>
-      <div v-if="$store.state.tabValue === 2">
+      <div v-if="$store.state.common.tabValue === 2">
         <main class="container mx-auto">
           <personal-info class="mx-auto mb-10" />
           <mypage-order-box class="mx-auto px-6" />

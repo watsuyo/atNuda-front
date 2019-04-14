@@ -1,7 +1,7 @@
 <template>
   <div class="w-1/3 flex justify-around border border-grey-light rounded-full border-solid py-2 px-4 ">
     <div @click="$store.dispatch('changeToLike')">
-      <div v-if="$store.state.tabValue === 1">
+      <div v-if="$store.state.common.tabValue === 1">
         <default-buttom text="自分の投稿" />
       </div>
       <div v-else>
@@ -9,7 +9,7 @@
       </div>
     </div>
     <div @click="$store.dispatch('changeToMyPost')">
-      <div v-if="$store.state.tabValue === 2">
+      <div v-if="$store.state.common.tabValue === 2">
         <default-buttom text="いいね済" />
       </div>
       <div v-else>

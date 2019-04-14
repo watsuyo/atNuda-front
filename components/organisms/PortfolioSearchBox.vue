@@ -7,27 +7,27 @@
         <div @click="$store.dispatch('changeIsFront')">
           <multi-select-buttom text="フロント" class="mr-3"/>
         </div>
-        <p>{{$store.state.position.front}}</p>
+        <p>{{$store.state.common.position.front}}</p>
 
         <div @click="$store.dispatch('changeIsDesigner')">
           <multi-select-buttom text="デザイナー" class="mr-3" />
         </div>
-        <p>{{$store.state.position.designer}}</p>
+        <p>{{$store.state.common.position.designer}}</p>
 
         <div @click="$store.dispatch('changeIsBack')">
           <multi-select-buttom text="バック" class="mr-3" />
         </div>
-        <p>{{$store.state.position.back}}</p>
+        <p>{{$store.state.common.position.back}}</p>
 
         <div @click="$store.dispatch('changeIsInfra')">
           <multi-select-buttom text="インフラ" class="mr-3" />
         </div>
-        <p>{{$store.state.position.infra}}</p>
+        <p>{{$store.state.common.position.infra}}</p>
 
         <div @click="$store.dispatch('changeIsFullStack')">
           <multi-select-buttom text="フルスタック" class="mr-3" />
         </div>
-        <p>{{$store.state.position.fullStack}}</p>
+        <p>{{$store.state.common.position.fullStack}}</p>
 
       </div>
     </div>
@@ -38,12 +38,12 @@
         <div @click="$store.dispatch('changeIsLookingForAJob')">
           <multi-select-buttom text="求職中" class="mr-3" />
         </div>
-        <p>{{$store.state.position.lookingForAJob}}</p>
+        <p>{{$store.state.common.position.lookingForAJob}}</p>
 
         <div @click="$store.dispatch('changeIsUnderRecruitmentOfItems')">
           <multi-select-buttom text="案件募集中" class="mr-3" />
         </div>
-        <p>{{$store.state.position.underRecruitmentOfItems}}</p>
+        <p>{{$store.state.common.position.underRecruitmentOfItems}}</p>
 
       </div>
     </div>

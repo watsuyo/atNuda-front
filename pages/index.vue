@@ -83,6 +83,11 @@ export default {
           'user_small_images_url': 'https://bulma.io/images/placeholders/96x96.png' }
       }
     }
+  },
+  created() {
+    // TODO API叩いて、ページ数が変わるように修正
+    const pagingNum = { pageNum: 5 }
+    this.$store.dispatch('setPortfolioPageCountAction', pagingNum)
   }
 }
 </script>

@@ -1,12 +1,12 @@
 <template>
   <paginate
     v-model="page"
-    :page-count="20"
+    :page-count="pagingNum"
     :page-range="3"
-    :margin-pages="2"
+    :margin-pages="1"
     :click-handler="clickCallback"
-    :prev-text="'Prev'"
-    :next-text="'Next'"
+    :prev-text="'＜'"
+    :next-text="'＞'"
     :container-class="'pagination'"
     :page-class="'page-item'">
   </paginate>
@@ -16,7 +16,12 @@
 export default {
   data() {
     return {
-      page: 10
+      page: 1
+    }
+  },
+  computed: {
+    pagingNum() {
+      return this.$store.state.paging.portfolioPageCount
     }
   }
 }
