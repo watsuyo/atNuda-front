@@ -21,7 +21,7 @@
                 </p>
               </div>
               <div>
-                <carousel :per-page="1" :adjustable-height="true" :autoplay="true" :loop="true" :autoplay-timeout="5000">
+                <carousel :per-page="1" :adjustable-height="true" :autoplay="false" :loop="true" :autoplay-timeout="5000">
                   <slide v-for="(image_url, index) in portfolio.image_urls" :key="index">
                     <a :href="portfolio.site_url">
                       <img :src="image_url" alt="Placeholder image">
