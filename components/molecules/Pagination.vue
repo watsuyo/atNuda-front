@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     pagingNum() {
-      return this.$store.state.paging.portfolioPageCount
+      return this.$store.state.portfolio.portfolioPageCount
     }
   }
 }

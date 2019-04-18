@@ -4,30 +4,26 @@
       <div class="w-1/4 text-center ">ポジション</div>
       <div class="w-3/4 flex">
         
-        <div @click="$store.dispatch('changeIsFront')">
-          <multi-select-buttom text="フロント" class="mr-3"/>
+        <div @click="addPosition('front')">
+          <multi-select-buttom text="フロント" class="mr-3" />
         </div>
-        <p>{{$store.state.common.position.front}}</p>
 
-        <div @click="$store.dispatch('changeIsDesigner')">
+        <div @click="addPosition('designer')">
           <multi-select-buttom text="デザイナー" class="mr-3" />
         </div>
-        <p>{{$store.state.common.position.designer}}</p>
 
-        <div @click="$store.dispatch('changeIsBack')">
+        <div @click="addPosition('back')">
           <multi-select-buttom text="バック" class="mr-3" />
         </div>
-        <p>{{$store.state.common.position.back}}</p>
 
-        <div @click="$store.dispatch('changeIsInfra')">
+        <div @click="addPosition('infra')">
           <multi-select-buttom text="インフラ" class="mr-3" />
         </div>
-        <p>{{$store.state.common.position.infra}}</p>
 
-        <div @click="$store.dispatch('changeIsFullStack')">
+        <div @click="addPosition('fullstack')">
           <multi-select-buttom text="フルスタック" class="mr-3" />
         </div>
-        <p>{{$store.state.common.position.fullStack}}</p>
+        <p>{{$store.state.portfolio.positions}}</p>
 
       </div>
     </div>
@@ -35,15 +31,14 @@
       <div class="w-1/4 text-center ">ステータス</div>
       <div class="w-3/4 flex">
 
-        <div @click="$store.dispatch('changeIsLookingForAJob')">
+        <div @click="addStatus('searchJob')">
           <multi-select-buttom text="求職中" class="mr-3" />
         </div>
-        <p>{{$store.state.common.position.lookingForAJob}}</p>
 
-        <div @click="$store.dispatch('changeIsUnderRecruitmentOfItems')">
+        <div @click="addStatus('underRecruitment')">
           <multi-select-buttom text="案件募集中" class="mr-3" />
         </div>
-        <p>{{$store.state.common.position.underRecruitmentOfItems}}</p>
+        <p>{{$store.state.portfolio.statuses}}</p>
 
       </div>
     </div>
@@ -69,6 +64,14 @@ export default {
     }
   },
   methods: {
+    addPosition (clickPosition) {
+      const positionObject = {position: clickPosition}
+      this.$store.dispatch('addPositionAction', positionObject)
+    },
+    addStatus (clickStatus) {
+      const statusObject = {status: clickStatus}
+      this.$store.dispatch('addStatusAction', statusObject)
+    }
   }
 }
 </script>
